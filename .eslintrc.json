@@ -1,0 +1,68 @@
+{
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "jest": true,
+      "node": true
+    },
+    "extends": [
+      "standard-with-typescript",
+      "plugin:react/recommended",
+      "prettier/@typescript-eslint",
+      "plugin:prettier/recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "parserOptions": {
+      "sourceType": "script",
+      "ecmaVersion": 2017,
+      "project": ["./tsconfig-eslint.json"],
+      "tsconfigRootDir": "./"
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["react", "@typescript-eslint", "eslint-plugin-import-helpers"],
+    "rules": {
+      "prettier/prettier": "error",
+      "no-useless-constructor": "off",
+      "no-use-before-define": "off",
+      "@typescript-eslint/consistent-type-definitions": "off",
+      "@typescript-eslint/strict-boolean-expressions": "off",
+      "@typescript-eslint/camelcase": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/no-namespace": "off",
+  
+      "react/jsx-uses-react": "error",
+      "react/jsx-uses-vars": "error",
+      "react/prop-types": "off",
+  
+      "import-helpers/order-imports": [
+        "error",
+        {
+          "alphabetize": {
+            "order": "asc",
+            "ignoreCase": true
+          },
+          "newlinesBetween": "never",
+          "groups": [
+            "/^react$/",
+            "module",
+            "/^@shared/",
+            "/^@modules/",
+            "/^@//",
+            "/^@/main/",
+            "/^@/presentation/",
+            "/^@/infra/",
+            "/^@/data/",
+            "/^@/domain/",
+            ["parent", "sibling"],
+            "index"
+          ]
+        }
+      ]
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+  }
