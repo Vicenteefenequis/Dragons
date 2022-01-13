@@ -1,7 +1,12 @@
 import React from 'react';
+import { DefaultLayout } from '../../components';
 
 const Home = (): JSX.Element => {
-  return <div></div>;
+  return (
+    <DefaultLayout>
+      <p>ola home</p>
+    </DefaultLayout>
+  );
 };
 
 export default Home;
