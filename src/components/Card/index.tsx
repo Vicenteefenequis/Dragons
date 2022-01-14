@@ -7,11 +7,18 @@ type Props = {
   name: string;
   canEdit: () => void;
   canDelete: () => void;
+  onClick: () => void;
 };
 
-const Card = ({ position, name, canDelete, canEdit }: Props): JSX.Element => {
+const Card = ({
+  position,
+  name,
+  canDelete,
+  canEdit,
+  onClick,
+}: Props): JSX.Element => {
   return (
-    <div className="card">
+    <div onClick={onClick} className="card">
       <div className="wrapper__icons">
         <button onClick={canDelete}>
           <FaTrash size={20} className="trash" />
