@@ -8,7 +8,7 @@ const Header = (): JSX.Element => {
   return (
     <div className="header">
       <NavLink
-        to="/"
+        to="/home"
         className={({ isActive }) =>
           isActive ? 'menu__content active' : 'menu__content'
         }
