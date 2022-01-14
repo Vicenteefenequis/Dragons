@@ -1,7 +1,7 @@
 import { ActionReturnType } from '../rootTypes';
 
 export type Dragon = {
-  createdAt: Date;
+  createdAt: string;
   name: string;
   type: string;
   histories: string[];
