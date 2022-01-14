@@ -1,0 +1,19 @@
+@import "../../styles/colors.scss";
+
+.contained-primary-button {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: $palettePrimaryDark !important;
+    &[disabled] {
+        background-color: $paletteSecondaryWhiteOpacity !important;
+        opacity: 0.7 !important;
+    
+        span {
+          color: #ffffff70 !important;
+        }
+      }
+
+      >div {
+        margin-right: 5px;
+      }
+}
