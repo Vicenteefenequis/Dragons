@@ -1,10 +1,54 @@
 import React from 'react';
-import { DefaultLayout } from '../../components';
+import { Card, DefaultLayout } from '../../components';
+import './styles.scss';
 
 const Home = (): JSX.Element => {
   return (
     <DefaultLayout>
-      <p>ola home</p>
+      <div className="home">
+        <Card
+          position={1}
+          name="Cratos Dragon"
+          canDelete={() => console.log('eerae')}
+          canEdit={() => console.log('edit')}
+        />
+        <Card
+          position={1}
+          name="Cratos Dragon"
+          canDelete={() => console.log('eerae')}
+          canEdit={() => console.log('edit')}
+        />
+        <Card
+          position={1}
+          name="Cratos Dragon"
+          canDelete={() => console.log('eerae')}
+          canEdit={() => console.log('edit')}
+        />
+        <Card
+          position={1}
+          name="Cratos Dragon"
+          canDelete={() => console.log('eerae')}
+          canEdit={() => console.log('edit')}
+        />
+        <Card
+          position={1}
+          name="Cratos Dragon"
+          canDelete={() => console.log('eerae')}
+          canEdit={() => console.log('edit')}
+        />
+        <Card
+          position={1}
+          name="Cratos Dragon"
+          canDelete={() => console.log('eerae')}
+          canEdit={() => console.log('edit')}
+        />
+        <Card
+          position={1}
+          name="Cratos Dragon"
+          canDelete={() => console.log('eerae')}
+          canEdit={() => console.log('edit')}
+        />
+      </div>
     </DefaultLayout>
   );
 };
