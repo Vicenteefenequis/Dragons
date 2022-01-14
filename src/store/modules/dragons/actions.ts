@@ -1,5 +1,8 @@
-import { GetDragonsAction } from './types';
-import { UpdateDragonAction, UpdateDragonPayload } from '.';
+import {
+  GetDragonsAction,
+  UpdateDragonAction,
+  UpdateDragonPayload,
+} from './types';
 
 export function GetDragons(): GetDragonsAction {
   return {

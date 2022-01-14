@@ -1,6 +1,6 @@
 import { all, debounce, put } from 'redux-saga/effects';
 import { getDragons } from '../../../repositories';
-import { UpdateDragons } from './actionts';
+import { UpdateDragons } from './actions';
 import { GetDragonsAction } from './types';
 
 function* GetDragonsSaga() {
