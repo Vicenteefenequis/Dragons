@@ -21,8 +21,13 @@ export async function getDragons(): Promise<GetDragonsResponse> {
     return nameOrderA > nameOrderB ? 1 : nameOrderB > nameOrderA ? -1 : 0;
   });
 
+  const dataMapping = sorttedData.map(data => ({
+    ...data,
+    createdAt: new Date(data.createdAt).toLocaleDateString(),
+  }));
+
   return {
     status: 'RESOLVE',
-    dragons: sorttedData,
+    dragons: dataMapping,
   };
 }
