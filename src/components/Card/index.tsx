@@ -3,7 +3,7 @@ import { FaTrash, FaPen } from 'react-icons/fa';
 import './styles.scss';
 
 type Props = {
-  position: number;
+  position: string;
   name: string;
   canEdit: () => void;
   canDelete: () => void;
