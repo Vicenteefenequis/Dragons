@@ -1,14 +1,14 @@
 import React from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import { Home } from '../pages';
-import Register from '../pages/Register';
+import { Detail, Home, Register } from '../pages';
 
 const Router = (): JSX.Element => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="home" element={<Home />} />
+        <Route path="home/:dragonId" element={<Detail />} />
+        <Route path="register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   );
