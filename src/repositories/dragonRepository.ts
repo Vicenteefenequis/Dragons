@@ -1,4 +1,4 @@
-import { Dragon } from '../store/modules/dragons';
+import { CreateDragonPayload, Dragon } from '../store/modules/dragons';
 import DragonApi from '../utils/api';
 import { RepositoryFunctionReturn } from './types';
 
@@ -29,5 +29,29 @@ export async function getDragons(): Promise<GetDragonsResponse> {
   return {
     status: 'RESOLVE',
     dragons: dataMapping,
+  };
+}
+
+export type CreateDragonResponse = RepositoryFunctionReturn<{
+  dragon: Dragon;
+}>;
+export async function createDragon(
+  dragon: CreateDragonPayload,
+): Promise<CreateDragonResponse> {
+  const { data: dragons } = await DragonApi.post<Dragon>('/', {
+    name: dragon.name,
+    type: dragon.type,
+  });
+  if (!dragons) {
+    return {
+      status: 'REJECT',
+      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+      dragon: {} as Dragon,
+    };
+  }
+
+  return {
+    status: 'RESOLVE',
+    dragon: dragons,
   };
 }
