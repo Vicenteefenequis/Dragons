@@ -3,7 +3,12 @@ import {
   UpdateDragonAction,
   UpdateDragonPayload,
 } from './types';
-import { CreateDragonAction, CreateDragonPayload } from '.';
+import {
+  CreateDragonAction,
+  CreateDragonPayload,
+  DeleteDragonAction,
+  DeleteDragonPayload,
+} from '.';
 
 export function GetDragons(): GetDragonsAction {
   return {
@@ -24,6 +29,13 @@ export function UpdateDragons(
 export function CreateDragon(payload: CreateDragonPayload): CreateDragonAction {
   return {
     type: '@dragons/CREATE_DRAGON_ACTION',
+    payload,
+  };
+}
+
+export function DeleteDragon(payload: DeleteDragonPayload): DeleteDragonAction {
+  return {
+    type: '@dragons/DELETE_DRAGON_ACTION',
     payload,
   };
 }
