@@ -17,6 +17,14 @@ export function dragonsReducer(
         draft.dragons = payload;
         break;
       }
+      case '@dragons/DELETE_DRAGON_ACTION': {
+        const { payload } = action;
+
+        draft.dragons = draft.dragons.filter(
+          dragon => dragon.id !== payload.id,
+        );
+        break;
+      }
 
       default:
     }
