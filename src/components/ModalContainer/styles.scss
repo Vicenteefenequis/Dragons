@@ -7,7 +7,7 @@
   top: 75px;
   z-index: 5;
   max-height: calc(100% - 200px);
-  left: calc(50% - 250px);
+  left: calc(50% - 100px);
   display: flex;
   flex-direction: column;
 
@@ -26,6 +26,9 @@
     padding: 10px;
   }
   .moda__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     overflow: auto;
     min-height: 200px;
     padding: 0px 40px;
@@ -45,7 +48,7 @@
     border-radius: 5px;
     padding: 5px;
     text-align: center;
-    width: 200px;
+    width: 100%;
     cursor: pointer;
     background-color: $paletteBlue100;
   }

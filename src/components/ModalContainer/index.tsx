@@ -8,7 +8,6 @@ type Props = {
   open: boolean;
   close: () => void;
   children: React.ReactNode;
-  onSubmit: () => void;
 };
 
 const ModalContainer = ({
@@ -16,7 +15,6 @@ const ModalContainer = ({
   close,
   children,
   title,
-  onSubmit,
 }: Props): ReactPortal | null => {
   const portalDiv =
     document.getElementById('root') ?? document.createElement('div');
@@ -32,11 +30,6 @@ const ModalContainer = ({
               </button>
             </div>
             <div className="moda__content">{children}</div>
-            <div className="modal__footer">
-              <button className="confirm__buton" onClick={onSubmit}>
-                Submit{' '}
-              </button>
-            </div>
           </div>
         </>,
         portalDiv,
