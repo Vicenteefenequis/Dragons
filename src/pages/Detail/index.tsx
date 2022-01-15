@@ -14,11 +14,13 @@ const Detail = (): JSX.Element => {
 
   return (
     <DefaultLayout>
-      <CardDetail
-        name={dragon?.name || ''}
-        type={dragon?.type || ''}
-        createdAt={dragon?.createdAt || ''}
-      />
+      <div className="detail">
+        <CardDetail
+          name={dragon?.name || ''}
+          type={dragon?.type || ''}
+          createdAt={dragon?.createdAt || ''}
+        />
+      </div>
     </DefaultLayout>
   );
 };
