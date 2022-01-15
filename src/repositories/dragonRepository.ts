@@ -1,4 +1,8 @@
-import { CreateDragonPayload, Dragon } from '../store/modules/dragons';
+import {
+  CreateDragonPayload,
+  Dragon,
+  PutDragonPayload,
+} from '../store/modules/dragons';
 import DragonApi from '../utils/api';
 import { RepositoryFunctionReturn } from './types';
 
@@ -66,11 +70,14 @@ export async function deleteDragon(id: string): Promise<CreateDragonResponse> {
 }
 
 export async function updateDragon(
-  dragon: Dragon,
+  dragon: PutDragonPayload,
 ): Promise<CreateDragonResponse> {
-  const { data: dragonResponse } = await DragonApi.put<Dragon>(`/${dragon.id}`);
+  const { data: dragonResponse } = await DragonApi.put<Dragon>(
+    `/${dragon.id}`,
+    { name: dragon.name, type: dragon.type },
+  );
 
-  if (!dragon) {
+  if (!dragonResponse) {
     return {
       status: 'REJECT',
       dragon: null,
