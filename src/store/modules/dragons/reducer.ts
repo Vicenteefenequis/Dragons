@@ -25,6 +25,17 @@ export function dragonsReducer(
         );
         break;
       }
+      case '@dragons/PUT_DRAGON_ACTION': {
+        const { payload } = action;
+
+        draft.dragons = draft.dragons.map(dragon => {
+          if (dragon.id === payload.id) {
+            return { ...dragon, ...payload };
+          }
+          return dragon;
+        });
+        break;
+      }
 
       default:
     }

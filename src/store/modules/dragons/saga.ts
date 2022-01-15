@@ -1,9 +1,19 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
-import { createDragon, deleteDragon, getDragons } from '../../../repositories';
+import {
+  createDragon,
+  deleteDragon,
+  getDragons,
+  updateDragon,
+} from '../../../repositories';
 import { UpdateRequestStatus } from '../app';
 import { UpdateDragons } from './actions';
 import { GetDragonsAction } from './types';
-import { CreateDragonAction, DeleteDragonAction, GetDragons } from '.';
+import {
+  CreateDragonAction,
+  DeleteDragonAction,
+  GetDragons,
+  PutDragonAction,
+} from '.';
 
 function* GetDragonsSaga() {
   yield put(UpdateRequestStatus('PENDING'));
@@ -27,6 +37,10 @@ function* DeleteDragonSaga({ payload }: DeleteDragonAction) {
   yield deleteDragon(payload.id);
 }
 
+function* PutDragonSaga({ payload }: PutDragonAction) {
+  yield updateDragon(payload);
+}
+
 export const dragonsSaga = all([
   takeLatest<CreateDragonAction['type'], typeof CreateDragonSaga>(
     '@dragons/CREATE_DRAGON_ACTION',
@@ -35,6 +49,10 @@ export const dragonsSaga = all([
   takeLatest<DeleteDragonAction['type'], typeof DeleteDragonSaga>(
     '@dragons/DELETE_DRAGON_ACTION',
     DeleteDragonSaga,
+  ),
+  takeLatest<PutDragonAction['type'], typeof PutDragonSaga>(
+    '@dragons/PUT_DRAGON_ACTION',
+    PutDragonSaga,
   ),
   takeLatest<GetDragonsAction['type'], typeof GetDragonsSaga>(
     '@dragons/GET_DRAGONS_ACTION',

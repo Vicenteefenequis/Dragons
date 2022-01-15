@@ -8,6 +8,8 @@ import {
   CreateDragonPayload,
   DeleteDragonAction,
   DeleteDragonPayload,
+  PutDragonAction,
+  PutDragonPayload,
 } from '.';
 
 export function GetDragons(): GetDragonsAction {
@@ -36,6 +38,12 @@ export function CreateDragon(payload: CreateDragonPayload): CreateDragonAction {
 export function DeleteDragon(payload: DeleteDragonPayload): DeleteDragonAction {
   return {
     type: '@dragons/DELETE_DRAGON_ACTION',
+    payload,
+  };
+}
+export function PutDragon(payload: PutDragonPayload): PutDragonAction {
+  return {
+    type: '@dragons/PUT_DRAGON_ACTION',
     payload,
   };
 }
