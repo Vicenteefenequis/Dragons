@@ -29,10 +29,20 @@ export type CreateDragonAction = ActionReturnType<
   CreateDragonPayload
 >;
 
+export type DeleteDragonPayload = {
+  id: string;
+};
+
+export type DeleteDragonAction = ActionReturnType<
+  '@dragons/DELETE_DRAGON_ACTION',
+  DeleteDragonPayload
+>;
+
 export type DragonsActions =
   | GetDragonsAction
   | UpdateDragonAction
-  | CreateDragonAction;
+  | CreateDragonAction
+  | DeleteDragonAction;
 
 export type DragonsState = {
   dragons: Dragon[];
