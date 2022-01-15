@@ -1,10 +1,19 @@
 import React from 'react';
-import { DefaultLayout } from '../../components';
+import { Button, DefaultLayout, Input, LoadingSpinner } from '../../components';
+import { FormHandler } from '../../hooks/useForm';
+import './styles.scss';
 
 const Register = (): JSX.Element => {
   return (
     <DefaultLayout>
-      <p>ola register</p>
+      <FormHandler className="register" onSubmit={data => console.log(data)}>
+        <h1>Criar um Dragao</h1>
+        <Input name="name" placeholder={'Nome'} />
+        <Input name="type" placeholder={'Tipo'} />
+        <Button type="submit" className="btn">
+          Register
+        </Button>
+      </FormHandler>
     </DefaultLayout>
   );
 };
