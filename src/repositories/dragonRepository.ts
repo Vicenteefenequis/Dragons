@@ -33,7 +33,7 @@ export async function getDragons(): Promise<GetDragonsResponse> {
 }
 
 export type CreateDragonResponse = RepositoryFunctionReturn<{
-  dragon: Dragon;
+  dragon: Dragon | null;
 }>;
 export async function createDragon(
   dragon: CreateDragonPayload,
@@ -62,5 +62,23 @@ export async function deleteDragon(id: string): Promise<CreateDragonResponse> {
   return {
     status: 'RESOLVE',
     dragon,
+  };
+}
+
+export async function updateDragon(
+  dragon: Dragon,
+): Promise<CreateDragonResponse> {
+  const { data: dragonResponse } = await DragonApi.put<Dragon>(`/${dragon.id}`);
+
+  if (!dragon) {
+    return {
+      status: 'REJECT',
+      dragon: null,
+    };
+  }
+
+  return {
+    status: 'RESOLVE',
+    dragon: dragonResponse,
   };
 }
