@@ -20,7 +20,19 @@ export type UpdateDragonAction = ActionReturnType<
   UpdateDragonPayload
 >;
 
-export type DragonsActions = GetDragonsAction | UpdateDragonAction;
+export type CreateDragonPayload = {
+  name: string;
+  type: string;
+};
+export type CreateDragonAction = ActionReturnType<
+  '@dragons/CREATE_DRAGON_ACTION',
+  CreateDragonPayload
+>;
+
+export type DragonsActions =
+  | GetDragonsAction
+  | UpdateDragonAction
+  | CreateDragonAction;
 
 export type DragonsState = {
   dragons: Dragon[];
