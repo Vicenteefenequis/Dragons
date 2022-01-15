@@ -55,3 +55,12 @@ export async function createDragon(
     dragon: dragons,
   };
 }
+
+export async function deleteDragon(id: string): Promise<CreateDragonResponse> {
+  const { data: dragon } = await DragonApi.delete<Dragon>(`/${id}`);
+
+  return {
+    status: 'RESOLVE',
+    dragon,
+  };
+}
