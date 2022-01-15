@@ -1,4 +1,5 @@
 import React from 'react';
+import { BsFillInfoCircleFill } from 'react-icons/bs';
 import { FaTrash, FaPen } from 'react-icons/fa';
 import './styles.scss';
 
@@ -18,8 +19,17 @@ const Card = ({
   onClick,
 }: Props): JSX.Element => {
   return (
-    <div onClick={onClick} className="card">
+    <div className="card">
       <div className="wrapper__icons">
+        <button
+          onClick={onClick}
+          style={{
+            display: 'flex',
+            flex: 1,
+          }}
+        >
+          <BsFillInfoCircleFill size={20} className="info" />
+        </button>
         <button onClick={canDelete}>
           <FaTrash size={20} className="trash" />
         </button>

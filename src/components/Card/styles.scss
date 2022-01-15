@@ -9,15 +9,18 @@
 
     .wrapper__icons {
         display: flex;
-        justify-content: flex-end;
         padding: 10px;
+        margin: 10px ;
+
         .trash {
-            margin: 10px ;
             color: $paletteRed;
         }
         .pen {
-            margin: 10px ;
             color: $paletteYellow;
+            margin-left: 10px;
+        }
+        .info {
+            color: $palettePrimaryDark;
         }
     }
 
@@ -37,8 +40,5 @@
         }
     }
 
-    &:hover{
-        cursor: pointer;
-    }
-    
+  
 }
