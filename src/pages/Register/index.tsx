@@ -39,17 +39,26 @@ const Register = (): JSX.Element => {
 
   return (
     <DefaultLayout>
-      <FormHandler
-        className="register"
-        onSubmit={data => handleSubmit(data as DataForm)}
-      >
-        <h1>Criar um Dragao</h1>
-        <Input name="name" placeholder={'Nome'} />
-        <Input name="type" placeholder={'Tipo'} />
-        <Button loading={status === 'PENDING'} type="submit" className="btn">
-          Register
-        </Button>
-      </FormHandler>
+      <div className="register">
+        <div className="card">
+          <div className="card__content">
+            <h6>Cadastre seu Dragao</h6>
+            <FormHandler
+              onSubmit={data => handleSubmit(data as DataForm)}
+              className="input__content"
+            >
+              <div>
+                <Input name="name" placeholder={'Name'} />
+                <Input name="type" placeholder={'Type'} />
+              </div>
+
+              <Button loading={status === 'PENDING'}>
+                <p>Cadastrar</p>
+              </Button>
+            </FormHandler>
+          </div>
+        </div>
+      </div>
     </DefaultLayout>
   );
 };
