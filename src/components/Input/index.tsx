@@ -11,11 +11,15 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 const Input = ({ name, icon: Icon, ...rest }: InputProps): JSX.Element => {
   const { handleChangeField } = useFormHandler();
   return (
-    <div className="form__group field">
+    <div className="container__input">
+      {Icon && (
+        <div className="container__icon">
+          <Icon />
+        </div>
+      )}
       <input
         type="input"
-        className="form__field"
-        placeholder={rest.placeholder}
+        className="input"
         name={name}
         required
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,9 +27,6 @@ const Input = ({ name, icon: Icon, ...rest }: InputProps): JSX.Element => {
         }}
         {...rest}
       />
-      <label htmlFor={name} className="form__label">
-        {rest.placeholder}
-      </label>
     </div>
   );
 };

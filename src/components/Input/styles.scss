@@ -1,63 +1,41 @@
 @import "../../styles/colors.scss";
 
 
-.form__group {
-  position: relative;
-  padding: 15px 0 0;
-  margin-top: 10px;
-  width: 50%;
-}
-
-.form__field {
-  font-family: inherit;
+.container__input{
+  display: flex;
+  align-items: center;
   width: 100%;
-  border: 0;
-  border-bottom: 2px solid $paletteGray;
-  outline: 0;
-  font-size: 1.3rem;
-  color: $palettePrimaryDark;
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.2s;
-  font-family: 'Roboto';
+  border-radius: 10px;
+  border-width: 0.5px;
+  border-style:solid;
+  border-color: $borderInput;
+  margin: 10px 0;
 
-  &::placeholder {
-    color: transparent;
+  > input {
+    flex: 1;
+    padding: 10px;
+    background: none;
+    border: 0;
+    color: #000;
+    font-family: "Roboto";
+    font-weight: 500;
   }
 
-  &:placeholder-shown ~ .form__label {
-    font-size: 1.3rem;
-    cursor: text;
-    top: 20px;
+  > input:focus {
+    outline: 0;
   }
-}
 
-.form__label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
-  font-size: 1rem;
-  color: $paletteGray;
-  font-family: 'Roboto';
-}
-
-.form__field:focus {
-  ~ .form__label {
-    font-family: 'Roboto';
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
-    font-size: 1rem;
-    color: $palettePrimaryDark;
-    font-weight: bold;
+  > input::placeholder {
+    font-family: "Ubuntu";
+    font-weight: 500;
+    color: $paletteGray;
   }
-  padding-bottom: 6px;  
-  font-weight: 700;
-  border-width: 3px;
-  border-image-slice: 1;
-}
-.form__field{
-  &:required,&:invalid { box-shadow:none; }
+
+  .container__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    color: $paletteGray;
+  }
 }
