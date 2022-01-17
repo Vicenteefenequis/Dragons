@@ -26,7 +26,7 @@ const ModalContainer = ({
             <div className="modal__banner">
               <h1>{title}</h1>
               <button className="modal__close" onClick={close}>
-                <AiOutlineClose color="#ffff" />
+                <AiOutlineClose color="#ffff" size={24} />
               </button>
             </div>
             <div className="moda__content">{children}</div>
