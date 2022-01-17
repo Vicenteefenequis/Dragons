@@ -1,6 +1,14 @@
 @import "../../styles/colors.scss";
 
-.contained-primary-button {
+
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  &.contained-primary-button {
     border-radius: 5px;
     padding: 10px;
     background-color: $palettePrimaryDark !important;
@@ -16,4 +24,6 @@
       >div {
         margin-right: 5px;
       }
+}
+
 }

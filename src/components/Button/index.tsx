@@ -18,7 +18,9 @@ const Button = ({
   ...rest
 }: Props): JSX.Element => {
   return (
-    <button className={[`${variant}-${color}-button`, className].join(' ')}>
+    <button
+      className={[`${variant}-${color}-button button`, className].join(' ')}
+    >
       {loading && <LoadingSpinner size={20} />}
       {children}
     </button>
